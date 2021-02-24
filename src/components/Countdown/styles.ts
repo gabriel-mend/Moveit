@@ -40,8 +40,13 @@ export const Wrapper = styled.div`
         }
     `}
 `
-export const Button = styled.button`
-    ${({ theme }) => css`
+
+type ButtonProps = {
+    active?: boolean
+}
+
+export const Button = styled.button<ButtonProps>`
+    ${({ theme, active }) => css`
         width: 100%;
         height: 5rem;
         margin-top: 2rem;
@@ -53,16 +58,23 @@ export const Button = styled.button`
         border: 0;
         border-radius: 5px;
 
-        background-color: var(--blue);
-        color: var(--white);
+        background-color: ${!active ? 'var(--blue)' : 'var(--white)'};
+        color: ${!active ? 'var(--white)' : 'var(--title)'};
 
         font-size: 1.25rem;
         font-weight: 600;
 
         transition: all .2s;
 
-        &:hover {
-            background-color: var(--blue-dark);
+        &:not(:disabled):hover {
+            background-color: ${!active ? 'var(--blue-dark)' : 'var(--red)'};
+            color: ${active && 'var(--white)'};
+        }
+
+        &:disabled {
+            background-color: var(--white);
+            color: var(--text);
+            cursor: not-allowed;
         }
     `}
 `

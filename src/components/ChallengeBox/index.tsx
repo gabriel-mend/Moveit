@@ -52,7 +52,7 @@ export function ChallengeBox() {
         <S.ChallangeNotActive>
           <strong>Finalize um ciclo para receber um desafio</strong>
           <p>
-            <img src="icons/level-up.svg" alt="level up"/>
+            <img src="/icons/level-up.svg" alt="level up"/>
             Avance de level completando desafio
           </p>
         </S.ChallangeNotActive>

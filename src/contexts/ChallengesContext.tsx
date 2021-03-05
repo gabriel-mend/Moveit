@@ -104,7 +104,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesContextProvi
     <ChallengesContext.Provider 
       value={{
         level, 
-        currentExperience, 
+        currentExperience,  
         challengesCompleted, 
         experienceToNextLevel,
         levelUp,
@@ -112,7 +112,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesContextProvi
         activeChallenge,
         resetChallenge,
         completedChallenge,
-        closeModalLevelUp
+        closeModalLevelUp 
       }}
     >
       {children}
